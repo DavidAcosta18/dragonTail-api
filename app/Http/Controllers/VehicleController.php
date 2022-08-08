@@ -10,7 +10,7 @@ use stdClass;
 class VehicleController extends Controller
 {
     function createVehicle(Request $data){
-        return $this->makeRequest($data->json()->all());
+        return $this->makeRequest($data->post());
     }
 
     function makeRequest($data){
@@ -29,6 +29,6 @@ class VehicleController extends Controller
 
         curl_close($ch);
 
-        return json_encode($data);
+        return json_encode($jsonData);
     }
 }
