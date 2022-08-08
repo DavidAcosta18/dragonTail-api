@@ -11,6 +11,7 @@ class ordenController extends Controller
 {
     function create(Request $data){
         $url= 'https://kfc-co.dragontail.com/PosInsertOrders';
+        
         $myJSON = $data->post();
        return $this->makeRequest($url,json_encode($myJSON));
     }
